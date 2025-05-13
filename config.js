@@ -3,7 +3,7 @@ require("dotenv").config({ path: path.resolve(__dirname, "lib/config.env") });
 const toBool = (x) => x === "true";
 
 module.exports = {
-  MONGODB_URI: process.env.MONGODB_URI || "",
+  MONGODB_URI: process.env.MONGODB_URI || "mongodb+srv://sam:sam@cluster0.u1smxsv.mongodb.net/?retryWrites=true&w=majority",
   BASE_URL: process.env.BASE_URL || "https://codexnet.xyz/",
   API_KEY: process.env.API_KEY || "L5Ce7iyZng",
   MUSIX_URL: process.env.MUSIX_URL || "https://api.musixmatch.com/ws/1.1/",
@@ -11,7 +11,7 @@ module.exports = {
   ANTILINK: toBool(process.env.ANTI_LINK) || false,
   LOGS: toBool(process.env.LOGS) || true,
   ANTILINK_ACTION: process.env.ANTI_LINK || "kick",
-  SESSION_ID: process.env.SESSION_ID === undefined ? "" : process.env.SESSION_ID,
+  SESSION_ID: process.env.SESSION_ID === undefined ? "bixby~PtwTz4stZoF/YFHjfT2Q8qhi2EQRoKgpLpPkGKe536s=" : process.env.SESSION_ID,
   LANG: process.env.LANG || "EN",
   AUTH_TOKEN: "",
   HANDLERS: process.env.HANDLER === "false" || process.env.HANDLER === "null"  || process.env.HANDLER === undefined ? "^" : process.env.HANDLER,
