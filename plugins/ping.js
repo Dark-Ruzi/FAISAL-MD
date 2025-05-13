@@ -82,7 +82,7 @@ Bixby({
               const end = new Date().getTime();
               setTimeout(async () => {
                   return await message.client.sendMessage(message.jid, {
-                      text: "```Latancy: " + (end - start) + " ms```",
+                      text: "```Latancy: " + (end - start) + " ms``` \n> 𝚸𝚯𝐖𝚵𝚪𝐃 𝚩𝐘 𝐅𝚫𝚰𝐒𝚫𝐋-𝚳𝐃",
                       edit: key
                   });
               }, 1000)
@@ -144,7 +144,7 @@ Bixby({
     fromMe: true,
     desc: 'Lists numbers registered on wa, not registered etc.',
     use: 'whatsapp',
-    usage: 'onwa +48888888xxx'
+    usage: 'onwa +94888888xxx'
 }, (async (message, match) => {
     if (!match[1]) return await message.sendReply("_Need number!_");
     let {x} = await message.reply("_Processing..._");
