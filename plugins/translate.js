@@ -37,4 +37,4 @@ message.sendMessage(result.text);
       console.error("[Error]:", error);
     }
     })
-// Made with ❤ by AlienAlfa
+//////////𝚸𝚯𝐖𝚵𝚪𝐃 𝚩𝐘 𝐅𝚫𝚰𝐒𝚫𝐋-𝚳𝐃
