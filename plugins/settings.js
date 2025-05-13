@@ -54,7 +54,7 @@ Bixby({
 
 ││ *snapshot* : Saves the current metadata of the group and can be used to restore the group with the saved data later *bot must be admin*
 
-│╰──㋰\n`.toUpperCase()
+│╰──㋰\n> 𝚸𝚯𝐖𝚵𝚪𝐃 𝚩𝐘 𝐅𝚫𝚰𝐒𝚫𝐋-𝚳𝐃`.toUpperCase()
 
         return message.reply(mess);
 
