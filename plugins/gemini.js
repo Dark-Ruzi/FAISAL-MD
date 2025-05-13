@@ -11,7 +11,7 @@ Bixby(
     desc: "Generate text with Gemini",
   },
   async (message, match, m) => {
-    if (!GEMINI_API) return console.log("Please add GEMINI_API");
+    if (!GEMINI_API) return console.log("https://bk9.fun/ai/gemini?q=");
     match = match || (message.reply_message && message.reply_message.text);
     if (!match) return await message.reply("_Provide a prompt_");
     const result = await ai.models.generateContent({
