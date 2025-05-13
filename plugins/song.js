@@ -4,7 +4,7 @@ const { Bixby, getBuffer } = require("../lib");
 
 Bixby(
   {
-    pattern: "song ?(.*)",
+    pattern: "song",
     fromMe: true,
     desc: "YouTube ගීතයක් බාගත කරන්න (audio)",
     type: "downloader",
