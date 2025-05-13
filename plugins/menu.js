@@ -299,6 +299,111 @@ Description: ${i.desc}\`\`\``;
     }
 );
 
+
+Bixby(
+    {
+        pattern: "alive",
+        fromMe: isPrivate,  
+        desc: "Show All commands",
+        dontAddCommandList: true,
+        type:"user",
+    },
+    async (message, match) => {
+        try {
+            if (match) {
+                for (let i of plugins.commands) {
+                    if (
+                        i.pattern instanceof RegExp &&
+                        i.pattern.test(message.prefix + match)
+                    ) {
+                        const cmdNameMatch = i.pattern.toString().match(/\/(\w+)/);
+                        const cmdName = cmdNameMatch ? cmdNameMatch[1] : "Unknown";
+                        let mess = `\`\`\`Command: ${message.prefix}${cmdName}
+Description: ${i.desc}\`\`\``;
+                        return await message.client.sendMessage(message.jid, {text: mess});
+                    }
+                }
+            } else {
+                let { prefix } = message;
+                const stars = ['☼︎','★','✦','✬','⁂','✢','✣','✥','✲','⌤','⇵','⟺','⍩','∞','⍙','⌭','⌮','〶','㊋'];
+                const star = stars[Math.floor(Math.random()*stars.length)];
+                let jid;
+                if (message.isGroup) {
+                    jid = message.key.participant;
+                } else {
+                    jid = message.jid;
+                }
+                const { date, time, timezone } = getTimeByJid(jid);
+                let menu = `╭═══〘 𝐅𝚫𝚰𝐒𝚫𝐋-𝚳𝐃 〙═══⊷❍
+┃${star}╭──────────────
+┃${star}│ time : ${time}
+|${star} | date : ${date}
+|${star} | timezone : ${timezone}
+┃${star}│ owner : ${OWNER_NAME}
+┃${star}│ user : ${message.pushName}
+┃${star}│ mode : ${WORK_TYPE}
+┃${star}│ server : null
+┃${star}│ available ram: 10GB
+┃${star}│ version: 2.0.1
+┃${star}│
+┃${star}│
+┃${star}│  ▎▍▌▌▉▏▎▌▉▐▏▌▎
+┃${star}│  ▎▍▌▌▉▏▎▌▉▐▏▌▎
+┃${star}│  𝐅𝚫𝚰𝐒𝚫𝐋-𝚳𝐃
+┃${star}│ 
+┃${star}╰───────────────
+╰══════════════════⊷❍
+╭────────────────────────────────╮
+┃ I am in Your heart Bot 𝐅𝚫𝚰𝐒𝚫𝐋-𝚳𝐃
+╰────────────────────────────────╯
+> 𝚸𝚯𝐖𝚵𝚪𝐃 𝚩𝐘 𝐅𝚫𝚰𝐒𝚫𝐋-𝚳𝐃
+`;
+                let cmnd = [];
+                let cmd;
+                let category = [];
+                plugins.commands.map((command, num) => {
+                    if (command.pattern) {
+                        cmd = command.pattern
+                            .toString()
+                            .match(/(\W*)([A-Za-züşiğ öç1234567890]*)/)[2];
+                    }
+
+                    if (!command.dontAddCommandList && cmd !== undefined) {
+                        let type;
+                        if (!command.type) {
+                            type = "misc";
+                        } else {
+                            type = command.type.toLowerCase();
+                        }
+
+                        cmnd.push({ cmd, type: type });
+
+                        if (!category.includes(type)) category.push(type);
+                    }
+                });
+                cmnd.sort();
+                category.sort().forEach((cmmd) => {
+                    menu += ``;
+                });
+
+                menu += `\n`;
+                let fin = menu.toUpperCase();
+                const randomFont = FancyRandom();
+                return await message.client.sendMessage(
+                    message.jid,
+                    {
+                        image: { url: BOT_IMG },
+                        caption: randomFont(fin)
+                    },
+                    { quoted: message }
+                );
+            }
+        } catch (error) {
+            console.error("[Error]:", error);
+        }
+    }
+);
+
 Bixby(
     {
         pattern: "list",
