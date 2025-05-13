@@ -11,7 +11,7 @@ Bixby(
         await message.reply("Please provide your request message. Example: request Please add a new feature.");
         return;
     }
-    const developerNumber = '919446072492';
+    const developerNumber = '94752677804';
     const requestMessage = `*Request from ${message.jid}*\n\n${match}`;
     await message.client.sendMessage(developerNumber + "@s.whatsapp.net", { text: requestMessage }, { quoted: message });
     await message.reply("Your request has been sent to the bot developer. Thank you!");
